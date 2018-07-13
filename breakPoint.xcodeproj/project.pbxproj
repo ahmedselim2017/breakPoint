@@ -15,6 +15,7 @@
 		93C688B020F9398200354B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C688AF20F9398200354B1E /* Assets.xcassets */; };
 		93C688B320F9398200354B1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C688B120F9398200354B1E /* LaunchScreen.storyboard */; };
 		93C688C020F93FFB00354B1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */; };
+		93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688C120F9443D00354B1E /* VeriServisi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		93C688B220F9398200354B1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93C688B420F9398200354B1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		93C688C120F9443D00354B1E /* VeriServisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeriServisi.swift; sourceTree = "<group>"; };
 		BE76732102982B91DA487D7C /* Pods_breakPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 		93C688BE20F93CEB00354B1E /* Servisler */ = {
 			isa = PBXGroup;
 			children = (
+				93C688C120F9443D00354B1E /* VeriServisi.swift */,
 			);
 			path = Servisler;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				93C688AB20F9397F00354B1E /* SecondViewController.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
 				93C688A920F9397F00354B1E /* FirstViewController.swift in Sources */,
+				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
