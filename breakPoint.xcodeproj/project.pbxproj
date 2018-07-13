@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4E51C9E809B9D53564B95A7B /* Pods_breakPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE76732102982B91DA487D7C /* Pods_breakPoint.framework */; };
+		9369FDFD20F951410027AD26 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FDFC20F951410027AD26 /* AuthVC.swift */; };
+		9369FE0020F951800027AD26 /* Sabitler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FDFF20F951800027AD26 /* Sabitler.swift */; };
+		9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0120F951C20027AD26 /* GirisYapVC.swift */; };
+		9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0320F964150027AD26 /* TxtGiris.swift */; };
+		9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FirstViewController.swift */; };
 		93C688AB20F9397F00354B1E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688AA20F9397F00354B1E /* SecondViewController.swift */; };
@@ -21,6 +26,11 @@
 /* Begin PBXFileReference section */
 		04471F95EBD33BBB2DC5913E /* Pods-breakPoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breakPoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-breakPoint/Pods-breakPoint.release.xcconfig"; sourceTree = "<group>"; };
 		2F79DDFA0CBA79AF9F65C83B /* Pods-breakPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-breakPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-breakPoint/Pods-breakPoint.debug.xcconfig"; sourceTree = "<group>"; };
+		9369FDFC20F951410027AD26 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		9369FDFF20F951800027AD26 /* Sabitler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sabitler.swift; sourceTree = "<group>"; };
+		9369FE0120F951C20027AD26 /* GirisYapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GirisYapVC.swift; sourceTree = "<group>"; };
+		9369FE0320F964150027AD26 /* TxtGiris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtGiris.swift; sourceTree = "<group>"; };
+		9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolgeGorunusu.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93C688A820F9397F00354B1E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +73,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9369FDFE20F951750027AD26 /* Araclar */ = {
+			isa = PBXGroup;
+			children = (
+				9369FDFF20F951800027AD26 /* Sabitler.swift */,
+			);
+			path = Araclar;
+			sourceTree = "<group>";
+		};
 		93C6889A20F9397F00354B1E = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +102,7 @@
 		93C688A520F9397F00354B1E /* breakPoint */ = {
 			isa = PBXGroup;
 			children = (
+				9369FDFE20F951750027AD26 /* Araclar */,
 				93C688BE20F93CEB00354B1E /* Servisler */,
 				93C688BD20F93CC700354B1E /* Eklentiler */,
 				93C688BC20F93CB400354B1E /* Modeller */,
@@ -104,6 +123,8 @@
 			children = (
 				93C688A820F9397F00354B1E /* FirstViewController.swift */,
 				93C688AA20F9397F00354B1E /* SecondViewController.swift */,
+				9369FDFC20F951410027AD26 /* AuthVC.swift */,
+				9369FE0120F951C20027AD26 /* GirisYapVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +132,8 @@
 		93C688BB20F93CA900354B1E /* Gorunumler */ = {
 			isa = PBXGroup;
 			children = (
+				9369FE0320F964150027AD26 /* TxtGiris.swift */,
+				9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */,
 			);
 			path = Gorunumler;
 			sourceTree = "<group>";
@@ -256,10 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9369FDFD20F951410027AD26 /* AuthVC.swift in Sources */,
+				9369FE0020F951800027AD26 /* Sabitler.swift in Sources */,
 				93C688AB20F9397F00354B1E /* SecondViewController.swift in Sources */,
+				9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */,
+				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
 				93C688A920F9397F00354B1E /* FirstViewController.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
+				9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
