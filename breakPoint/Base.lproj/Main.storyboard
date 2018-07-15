@@ -191,6 +191,9 @@
                                                 <state key="normal" title="Facebook İle Giriş Yap">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="facebookIleGirisYapBasildi:" destination="IP7-qB-2Wi" eventType="touchUpInside" id="fPv-CP-IaY"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzU-kS-Zv7">
                                                 <rect key="frame" x="0.0" y="139" width="303" height="59.5"/>
@@ -198,6 +201,9 @@
                                                 <state key="normal" title="G+ İle Giriş Yap">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="googleIleGirisYapBasildi:" destination="IP7-qB-2Wi" eventType="touchUpInside" id="FV3-0y-rhx"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YADA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td6-8z-Zib">
                                                 <rect key="frame" x="0.0" y="208.5" width="303" height="59.5"/>
@@ -216,6 +222,9 @@
                                         <state key="normal" title=" E-Posta İle Giriş Yap" image="emailIcon">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="epostaIleGirisYapBasildi:" destination="IP7-qB-2Wi" eventType="touchUpInside" id="Iyr-ai-6dQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25490196078431371" green="0.27058823529411763" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,6 +274,9 @@
                                     <constraint firstAttribute="height" constant="30" id="xOn-8r-kxG"/>
                                 </constraints>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="kapatmaBasildi:" destination="6WA-KE-toW" eventType="touchUpInside" id="iu8-gm-8S0"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AVu-x2-VfL">
                                 <rect key="frame" x="36" y="78" width="303" height="173"/>
@@ -307,6 +319,9 @@
                                 <state key="normal" title="Giriş Yap">
                                     <color key="titleColor" red="0.058823529409999999" green="0.6705882353" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="girisYapBasildi:" destination="6WA-KE-toW" eventType="touchUpInside" id="Wd5-Lq-YMl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -321,6 +336,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Nat-9e-XMK"/>
                     </view>
+                    <connections>
+                        <outlet property="txtEposta" destination="YTm-pN-fZw" id="LLU-pk-mmj"/>
+                        <outlet property="txtSifre" destination="h4l-vu-NVG" id="vem-rS-6uI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psx-02-pS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

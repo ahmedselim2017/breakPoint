@@ -10,13 +10,44 @@ import UIKit
 
 class GirisYapVC: UIViewController {
 
+    @IBOutlet weak var txtEposta: TxtGiris!
+    @IBOutlet weak var txtSifre: TxtGiris!
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        super.viewDidLoad();
+        
+        txtSifre.delegate=self;
+        txtEposta.delegate=self;
     }
     
-
+    @IBAction func girisYapBasildi(_ sender: Any) {
+        if txtEposta.text != nil && txtSifre.text != nil{
+            AuthServisi.ornek.kullaniciGirisYap(eposta: txtEposta.text!, sifre: txtEposta.text!) { (sonuc, hata) in
+                if sonuc{
+                    self.dismiss(animated: true, completion: nil);
+                }
+                else{
+                    debugPrint(hata?.localizedDescription);
+                }
+                AuthServisi.ornek.kullaniciKaydet(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciKaydetmeBitis: { (durum, hata) in
+                    if durum{
+                        AuthServisi.ornek.kullaniciGirisYap(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciGirisBitis: { (durum, nil) in
+                            dismiss(animated: true, completion: nil);
+                            debugPrint("YENİ KULLANICI");
+                            
+                        })
+                    }
+                    else{
+                        debugPrint(hata?.localizedDescription);
+                    }
+                })
+            }
+        }
+    }
+    
+    @IBAction func kapatmaBasildi(_ sender: Any) {
+        dismiss(animated: true, completion: nil);
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +58,8 @@ class GirisYapVC: UIViewController {
     }
     */
 
+}
+
+extension GirisYapVC:UITextFieldDelegate{
+    
 }

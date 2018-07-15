@@ -30,7 +30,7 @@ class AuthServisi{
     
     func kullaniciGirisYap(eposta:String,sifre:String,kullaniciGirisBitis:@escaping(_ durum:Bool, _ hata:Error?)->()){
         Auth.auth().signIn(withEmail: eposta, password: sifre) { (kullanici, hata) in
-            guard let kullanici=kullanici else{
+            if hata != nil{
                 kullaniciGirisBitis(false,hata);
                 return;
             }

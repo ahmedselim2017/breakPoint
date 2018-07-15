@@ -16,7 +16,16 @@ class AuthVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func epostaIleGirisYapBasildi(_ sender: Any) {
+        let girisYapVC=storyboard?.instantiateViewController(withIdentifier: SB_ID_GirisYapVC);
+        present(girisYapVC!, animated: true, completion: nil);
+    }
+    
+    @IBAction func facebookIleGirisYapBasildi(_ sender: Any) {
+    }
 
+    @IBAction func googleIleGirisYapBasildi(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 
