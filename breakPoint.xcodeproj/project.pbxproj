@@ -15,8 +15,8 @@
 		9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */; };
 		9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0720F970B60027AD26 /* AuthServisi.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
-		93C688A920F9397F00354B1E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FirstViewController.swift */; };
-		93C688AB20F9397F00354B1E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688AA20F9397F00354B1E /* SecondViewController.swift */; };
+		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
+		93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688AA20F9397F00354B1E /* GrupVC.swift */; };
 		93C688AE20F9397F00354B1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C688AC20F9397F00354B1E /* Main.storyboard */; };
 		93C688B020F9398200354B1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93C688AF20F9398200354B1E /* Assets.xcassets */; };
 		93C688B320F9398200354B1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C688B120F9398200354B1E /* LaunchScreen.storyboard */; };
@@ -35,8 +35,8 @@
 		9369FE0720F970B60027AD26 /* AuthServisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServisi.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93C688A820F9397F00354B1E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		93C688AA20F9397F00354B1E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		93C688A820F9397F00354B1E /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		93C688AA20F9397F00354B1E /* GrupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupVC.swift; sourceTree = "<group>"; };
 		93C688AD20F9397F00354B1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93C688AF20F9398200354B1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93C688B220F9398200354B1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,8 +106,6 @@
 			children = (
 				9369FDFE20F951750027AD26 /* Araclar */,
 				93C688BE20F93CEB00354B1E /* Servisler */,
-				93C688BD20F93CC700354B1E /* Eklentiler */,
-				93C688BC20F93CB400354B1E /* Modeller */,
 				93C688BB20F93CA900354B1E /* Gorunumler */,
 				93C688BA20F93C9000354B1E /* Controller */,
 				93C688A620F9397F00354B1E /* AppDelegate.swift */,
@@ -123,8 +121,8 @@
 		93C688BA20F93C9000354B1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				93C688A820F9397F00354B1E /* FirstViewController.swift */,
-				93C688AA20F9397F00354B1E /* SecondViewController.swift */,
+				93C688A820F9397F00354B1E /* FeedVC.swift */,
+				93C688AA20F9397F00354B1E /* GrupVC.swift */,
 				9369FDFC20F951410027AD26 /* AuthVC.swift */,
 				9369FE0120F951C20027AD26 /* GirisYapVC.swift */,
 			);
@@ -138,20 +136,6 @@
 				9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */,
 			);
 			path = Gorunumler;
-			sourceTree = "<group>";
-		};
-		93C688BC20F93CB400354B1E /* Modeller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modeller;
-			sourceTree = "<group>";
-		};
-		93C688BD20F93CC700354B1E /* Eklentiler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Eklentiler;
 			sourceTree = "<group>";
 		};
 		93C688BE20F93CEB00354B1E /* Servisler */ = {
@@ -284,11 +268,11 @@
 			files = (
 				9369FDFD20F951410027AD26 /* AuthVC.swift in Sources */,
 				9369FE0020F951800027AD26 /* Sabitler.swift in Sources */,
-				93C688AB20F9397F00354B1E /* SecondViewController.swift in Sources */,
+				93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */,
 				9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */,
 				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
-				93C688A920F9397F00354B1E /* FirstViewController.swift in Sources */,
+				93C688A920F9397F00354B1E /* FeedVC.swift in Sources */,
 				9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
 				9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */,
