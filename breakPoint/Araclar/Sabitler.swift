@@ -11,3 +11,4 @@ import Foundation
 //StoryBoard Id'leri
 let SB_ID_AuthVC="AuthVC";
 let SB_ID_GirisYapVC="GirisYapVC";
+let SB_ID_ProfilVC="ProfilVC";

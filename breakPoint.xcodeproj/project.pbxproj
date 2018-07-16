@@ -22,6 +22,7 @@
 		93C688B320F9398200354B1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93C688B120F9398200354B1E /* LaunchScreen.storyboard */; };
 		93C688C020F93FFB00354B1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */; };
 		93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688C120F9443D00354B1E /* VeriServisi.swift */; };
+		93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9546F20FC8087007F0D44 /* ProfilVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		93C688B420F9398200354B1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93C688C120F9443D00354B1E /* VeriServisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeriServisi.swift; sourceTree = "<group>"; };
+		93C9546F20FC8087007F0D44 /* ProfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilVC.swift; sourceTree = "<group>"; };
 		BE76732102982B91DA487D7C /* Pods_breakPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				93C688AA20F9397F00354B1E /* GrupVC.swift */,
 				9369FDFC20F951410027AD26 /* AuthVC.swift */,
 				9369FE0120F951C20027AD26 /* GirisYapVC.swift */,
+				93C9546F20FC8087007F0D44 /* ProfilVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */,
 				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
+				93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */,
 				93C688A920F9397F00354B1E /* FeedVC.swift in Sources */,
 				9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
