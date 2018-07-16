@@ -16,3 +16,4 @@ let SB_ID_ProfilVC="ProfilVC";
 
 //Tablo Id'leri
 let TB_ID_FEED_HUCRESI="feedHucresi";
+let TB_ID_KULLANICI_HUCRESI="kullaniciHucresi";
