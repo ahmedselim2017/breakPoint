@@ -14,6 +14,7 @@
 		9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0320F964150027AD26 /* TxtGiris.swift */; };
 		9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */; };
 		9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369FE0720F970B60027AD26 /* AuthServisi.swift */; };
+		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
 		93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688AA20F9397F00354B1E /* GrupVC.swift */; };
@@ -35,6 +36,7 @@
 		9369FE0320F964150027AD26 /* TxtGiris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtGiris.swift; sourceTree = "<group>"; };
 		9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GolgeGorunusu.swift; sourceTree = "<group>"; };
 		9369FE0720F970B60027AD26 /* AuthServisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServisi.swift; sourceTree = "<group>"; };
+		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93C688A820F9397F00354B1E /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Araclar;
 			sourceTree = "<group>";
 		};
+		93A6C94D20FC8D2A00904345 /* Eklentiler */ = {
+			isa = PBXGroup;
+			children = (
+				93A6C94E20FC8D5200904345 /* UIViewEkl.swift */,
+			);
+			path = Eklentiler;
+			sourceTree = "<group>";
+		};
 		93C6889A20F9397F00354B1E = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		93C688A520F9397F00354B1E /* breakPoint */ = {
 			isa = PBXGroup;
 			children = (
+				93A6C94D20FC8D2A00904345 /* Eklentiler */,
 				9369FDFE20F951750027AD26 /* Araclar */,
 				93C688BE20F93CEB00354B1E /* Servisler */,
 				93C688BB20F93CA900354B1E /* Gorunumler */,
@@ -277,6 +288,7 @@
 				93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */,
 				93C9547220FC84E9007F0D44 /* PostOlusturVC.swift in Sources */,
 				9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */,
+				93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */,
 				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
 				93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */,

@@ -19,7 +19,7 @@ class PostOlusturVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        btnGonder.klavyeyeBaglan();
         txaMesaj.delegate=self;
         // Do any additional setup after loading the view.
     }
