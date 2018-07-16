@@ -24,6 +24,7 @@ class GirisYapVC: UIViewController {
         if txtEposta.text != nil && txtSifre.text != nil{
             AuthServisi.ornek.kullaniciGirisYap(eposta: txtEposta.text!, sifre: txtSifre.text!) { (sonuc, hata) in
                 if sonuc{
+                    debugPrint("Giriş Başarılı");
                     self.dismiss(animated: true, completion: nil);
                 }
                 else{

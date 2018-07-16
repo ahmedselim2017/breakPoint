@@ -8,6 +8,8 @@
 
 import Foundation;
 import Firebase;
+import FirebaseAuth;
+
 
 let VT_TEMEL=Database.database().reference();
 
@@ -37,6 +39,16 @@ class VeriServisi{
     func VTKullaniciOlustur(id:String,kullaniciVeri:Dictionary<String,Any>){
         REF_KULLANICILAR.child(id).updateChildValues(kullaniciVeri);
         
+    }
+    
+    func feedPaylas(mesaj:String,kullaniciID:String,groupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
+        if groupAnahtari != nil{
+            
+        }
+        else{
+            REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciID":kullaniciID]);
+            sonuc(true);
+        }
     }
     
 }

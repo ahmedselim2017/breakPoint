@@ -12,6 +12,7 @@ class ProfilVC: UIViewController {
 
     @IBOutlet weak var txtEposta: UILabel!
     @IBOutlet weak var imgProfil: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

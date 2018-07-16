@@ -23,6 +23,7 @@
 		93C688C020F93FFB00354B1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */; };
 		93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688C120F9443D00354B1E /* VeriServisi.swift */; };
 		93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9546F20FC8087007F0D44 /* ProfilVC.swift */; };
+		93C9547220FC84E9007F0D44 /* PostOlusturVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C9547120FC84E9007F0D44 /* PostOlusturVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		93C688BF20F93FFB00354B1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		93C688C120F9443D00354B1E /* VeriServisi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeriServisi.swift; sourceTree = "<group>"; };
 		93C9546F20FC8087007F0D44 /* ProfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilVC.swift; sourceTree = "<group>"; };
+		93C9547120FC84E9007F0D44 /* PostOlusturVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOlusturVC.swift; sourceTree = "<group>"; };
 		BE76732102982B91DA487D7C /* Pods_breakPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_breakPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				9369FDFC20F951410027AD26 /* AuthVC.swift */,
 				9369FE0120F951C20027AD26 /* GirisYapVC.swift */,
 				93C9546F20FC8087007F0D44 /* ProfilVC.swift */,
+				93C9547120FC84E9007F0D44 /* PostOlusturVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				9369FDFD20F951410027AD26 /* AuthVC.swift in Sources */,
 				9369FE0020F951800027AD26 /* Sabitler.swift in Sources */,
 				93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */,
+				93C9547220FC84E9007F0D44 /* PostOlusturVC.swift in Sources */,
 				9369FE0620F96F0B0027AD26 /* GolgeGorunusu.swift in Sources */,
 				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
