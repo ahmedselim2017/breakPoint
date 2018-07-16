@@ -39,7 +39,7 @@ class GirisYapVC: UIViewController {
                         })
                     }
                     else{
-                        debugPrint(hata?.localizedDescription);
+                        debugPrint(String(describing: hata?.localizedDescription ));
                     }
                 })
             }
