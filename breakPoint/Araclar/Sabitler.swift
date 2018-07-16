@@ -12,3 +12,7 @@ import Foundation
 let SB_ID_AuthVC="AuthVC";
 let SB_ID_GirisYapVC="GirisYapVC";
 let SB_ID_ProfilVC="ProfilVC";
+
+
+//Tablo Id'leri
+let TB_ID_FEED_HUCRESI="feedHucresi";

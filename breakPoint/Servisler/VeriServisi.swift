@@ -51,4 +51,19 @@ class VeriServisi{
         }
     }
     
+    func feedGetir(sonuc:@escaping (_ mesaj:[Mesaj])->()){
+        var mesajlarDizisi=[Mesaj]();
+        REF_FEEDLER.observeSingleEvent(of: .value) { (feedSnapshot) in
+            guard let feedSnapshot = feedSnapshot.children.allObjects as?[DataSnapshot] else{return;}
+            
+            for mesaj in feedSnapshot{
+                let icerik=mesaj.childSnapshot(forPath: "icerik").value as! String;
+                let kullaniciID=mesaj.childSnapshot(forPath: "kullaniciID").value as! String;
+                let sonMesaj=Mesaj(icerik: icerik, kullaniciID: kullaniciID);
+                mesajlarDizisi.append(sonMesaj);
+            }
+            sonuc(mesajlarDizisi);
+        }
+    }
+    
 }

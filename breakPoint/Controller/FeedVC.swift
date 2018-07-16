@@ -9,12 +9,51 @@
 import UIKit
 
 class FeedVC: UIViewController {
+    
+    var mesajlarDizisi=[Mesaj]();
 
+    @IBOutlet weak var tabloGoruntuleyici: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tabloGoruntuleyici.delegate=self;
+        tabloGoruntuleyici.dataSource=self;
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        VeriServisi.ornek.feedGetir { (mesajDizi) in
+            self.mesajlarDizisi=mesajDizi;
+            self.tabloGoruntuleyici.reloadData();
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated);
+//        VeriServisi.ornek.feedGetir { (mesajDizi) in
+//            self.mesajlarDizisi=mesajDizi;
+//            self.tabloGoruntuleyici.reloadData();
+//        }
+    }
 
 }
 
+extension FeedVC:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mesajlarDizisi.count;
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_FEED_HUCRESI) as? FeedHucresi else{return UITableViewCell();}
+        
+        let resim=UIImage(named: "defaultProfileImage");
+        let mesaj=mesajlarDizisi[indexPath.row];
+        let eposta=mesaj.kullaniciID;
+        let icerik=mesaj.icerik;
+        hucre.hucreleriAyarla(imgProfil: resim!, eposta: eposta, icerik: icerik);
+        return hucre;
+        
+    }
+}
