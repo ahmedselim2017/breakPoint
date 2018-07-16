@@ -21,13 +21,17 @@ class PostOlusturVC: UIViewController {
         super.viewDidLoad()
         btnGonder.klavyeyeBaglan();
         txaMesaj.delegate=self;
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.lblEposta.text=Auth.auth().currentUser?.email;
     }
     
     @IBAction func btnGonderBasildi(_ sender: Any) {
         if txaMesaj.text != nil && txaMesaj.text != "Birşeyler Paylaşın..."{
             btnGonder.isEnabled=false;
-            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciID: (Auth.auth().currentUser?.uid)!, groupAnahtari: nil) { (durum) in
+            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, groupAnahtari: nil) { (durum) in
                 if durum{
                     self.btnGonder.isEnabled=true;
                     self.dismiss(animated: true, completion: nil);

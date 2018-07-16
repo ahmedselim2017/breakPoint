@@ -10,19 +10,19 @@ import Foundation
 
 class  Mesaj {
     private var _icerik:String;
-    private var _kullaniciID:String;
+    private var _kullaniciEposta:String;
     
     var icerik:String{
         return _icerik;
     }
     
-    var kullaniciID:String{
-        return _kullaniciID;
+    var kullaniciEposta:String{
+        return _kullaniciEposta;
     }
     
-    init(icerik:String,kullaniciID:String) {
+    init(icerik:String,kullaniciEposta:String) {
         self._icerik=icerik;
-        self._kullaniciID=kullaniciID;
+        self._kullaniciEposta=kullaniciEposta;
     }
     
 }

@@ -41,15 +41,16 @@ class VeriServisi{
         
     }
     
-    func feedPaylas(mesaj:String,kullaniciID:String,groupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
+    func feedPaylas(mesaj:String,kullaniciEposta:String,groupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
         if groupAnahtari != nil{
             
         }
         else{
-            REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciID":kullaniciID]);
+            REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta]);
             sonuc(true);
         }
     }
+    
     
     func feedGetir(sonuc:@escaping (_ mesaj:[Mesaj])->()){
         var mesajlarDizisi=[Mesaj]();
@@ -58,11 +59,22 @@ class VeriServisi{
             
             for mesaj in feedSnapshot{
                 let icerik=mesaj.childSnapshot(forPath: "icerik").value as! String;
-                let kullaniciID=mesaj.childSnapshot(forPath: "kullaniciID").value as! String;
-                let sonMesaj=Mesaj(icerik: icerik, kullaniciID: kullaniciID);
+                let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as! String;
+                let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta);
                 mesajlarDizisi.append(sonMesaj);
             }
             sonuc(mesajlarDizisi);
+        }
+    }
+    
+
+    func kullaniciCikisYap(sonuc:@escaping(_ durum:Bool,_ hata:Error?)->()){
+        do{
+            try Auth.auth().signOut();
+            sonuc(true, nil);
+        }
+        catch{
+            sonuc(false, Error.self as! Error);
         }
     }
     

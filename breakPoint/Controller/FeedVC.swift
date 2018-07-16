@@ -23,18 +23,12 @@ class FeedVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         VeriServisi.ornek.feedGetir { (mesajDizi) in
-            self.mesajlarDizisi=mesajDizi;
+            self.mesajlarDizisi=mesajDizi.reversed();
             self.tabloGoruntuleyici.reloadData();
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated);
-//        VeriServisi.ornek.feedGetir { (mesajDizi) in
-//            self.mesajlarDizisi=mesajDizi;
-//            self.tabloGoruntuleyici.reloadData();
-//        }
-    }
+    
 
 }
 
@@ -50,9 +44,11 @@ extension FeedVC:UITableViewDelegate,UITableViewDataSource{
         
         let resim=UIImage(named: "defaultProfileImage");
         let mesaj=mesajlarDizisi[indexPath.row];
-        let eposta=mesaj.kullaniciID;
         let icerik=mesaj.icerik;
-        hucre.hucreleriAyarla(imgProfil: resim!, eposta: eposta, icerik: icerik);
+        hucre.hucreleriAyarla(imgProfil: resim!, eposta: "\(mesaj.kullaniciEposta)", icerik: icerik);
+
+        
+        let eposta=mesaj.kullaniciEposta;
         return hucre;
         
     }

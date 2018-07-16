@@ -182,7 +182,7 @@
                                     <constraint firstAttribute="width" constant="60" id="hTY-We-up7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ahmedselimuzum@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-Je-lOa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deneme@deneme.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAx-Je-lOa">
                                 <rect key="frame" x="100" y="110" width="255" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="AZF-cZ-Qvl"/>
@@ -367,7 +367,7 @@
                                             <constraint firstAttribute="width" secondItem="snK-QR-hrK" secondAttribute="height" multiplier="1:1" id="UkJ-u7-UW9"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ahmedselimuzum@gmail.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7P-G1-7Xp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deneme@deneme.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7P-G1-7Xp">
                                         <rect key="frame" x="0.0" y="150" width="375" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1t6-uF-cbz"/>
