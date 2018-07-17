@@ -10,6 +10,11 @@ import UIKit
 
 class GrupOlusturVC: UIViewController {
 
+    //Değişkenler
+    var epostaDizi=[String]();
+    
+    
+    // UI Elementleri
     @IBOutlet weak var txtBaslik: TxtGiris!
     @IBOutlet weak var txtAciklama: TxtGiris!
     @IBOutlet weak var txtKatilimcilar: TxtGiris!
@@ -24,6 +29,9 @@ class GrupOlusturVC: UIViewController {
         // Do any additional setup after loading the view.
         tabloGoruntuleyici.delegate=self;
         tabloGoruntuleyici.dataSource=self;
+        
+        txtKatilimcilar.delegate=self;
+        txtKatilimcilar.addTarget(self, action: #selector(txtKatilimciIcerikDegisti(_ :)), for: .editingChanged);
     }
     
     @IBAction func btnGrupOlusturBasildi(_ sender: Any) {
@@ -32,6 +40,22 @@ class GrupOlusturVC: UIViewController {
     @IBAction func btnGeriBasildi(_ sender: Any) {
         dismiss(animated: true, completion: nil);
     }
+    
+    @objc func txtKatilimciIcerikDegisti(_ txt:TxtGiris){
+        debugPrint("AAAA");
+        if txtKatilimcilar.text == ""{
+            epostaDizi=[];
+            tabloGoruntuleyici.reloadData();
+        }
+        else{
+            VeriServisi.ornek.emailGetir(sorgu: txtKatilimcilar.text!) { (epostaDizi) in
+                self.epostaDizi=epostaDizi;
+                debugPrint("skdlşklsdklsaşd\(epostaDizi.count)")
+                self.tabloGoruntuleyici.reloadData();
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -49,12 +73,19 @@ extension GrupOlusturVC:UITableViewDelegate,UITableViewDataSource{
         return 1;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        debugPrint(self.epostaDizi.count);
+        return self.epostaDizi.count;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_KULLANICI_HUCRESI) as? KullaniciHucresi else {return UITableViewCell();}
+        debugPrint("CCC");
+        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_KULLANICI_HUCRESI) as? KullaniciHucresi else {debugPrint("DFKSJKFS");return UITableViewCell();}
+        
         let rsmProfil=UIImage(named:"defaultProfileImage");
-        hucre.hucreleriAyarla(rsmProfil: rsmProfil!, eposta: "sanane123@123", secilmisMi: true);
+        hucre.hucreleriAyarla(rsmProfil: rsmProfil!, eposta: epostaDizi[indexPath.row], secilmisMi: true);
         return hucre;
     }
+}
+
+extension GrupOlusturVC:UITextFieldDelegate{
+    
 }

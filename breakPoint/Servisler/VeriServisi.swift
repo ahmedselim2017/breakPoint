@@ -71,6 +71,7 @@ class VeriServisi{
     func kullaniciCikisYap(sonuc:@escaping(_ durum:Bool,_ hata:Error?)->()){
         do{
             try Auth.auth().signOut();
+            
             sonuc(true, nil);
         }
         catch{
@@ -78,4 +79,23 @@ class VeriServisi{
         }
     }
     
+    func emailGetir(sorgu:String, sonuc:@escaping(_ epostaDizi:[String])->()){
+        var epostalar=[String]();
+        REF_KULLANICILAR.observe(.value) { (snapshot) in
+            guard let kullaniciSnapshot = snapshot.children.allObjects as? [DataSnapshot] else{return;}
+            
+            for kullanici in kullaniciSnapshot{
+                let eposta=kullanici.childSnapshot(forPath: "eposta").value as? String;
+                
+                if (eposta?.contains(sorgu))! == true && eposta != Auth.auth().currentUser?.email{
+                    debugPrint("BBBB")
+                    epostalar.append(eposta!);
+                    debugPrint("BURAYA\(epostalar.count)");
+                }
+            }
+            sonuc(epostalar);
+        }
+    }
+    
 }
+

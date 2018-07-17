@@ -17,6 +17,7 @@ class AuthServisi{
             
             guard let kullanici = kullanici else{
                 kullaniciKaydetmeBitis(false,hata);
+                
                 return;
             }
             
