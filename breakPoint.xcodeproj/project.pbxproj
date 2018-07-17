@@ -18,6 +18,7 @@
 		93A3C16020FC96FE0048B52C /* Mesaj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C15F20FC96FE0048B52C /* Mesaj.swift */; };
 		93A3C16220FD59220048B52C /* GrupOlusturVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16120FD59220048B52C /* GrupOlusturVC.swift */; };
 		93A3C16420FD5CA90048B52C /* KullaniciHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */; };
+		93A3C16C20FE802F0048B52C /* GurupHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16B20FE802F0048B52C /* GurupHucresi.swift */; };
 		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
@@ -44,6 +45,7 @@
 		93A3C15F20FC96FE0048B52C /* Mesaj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mesaj.swift; sourceTree = "<group>"; };
 		93A3C16120FD59220048B52C /* GrupOlusturVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupOlusturVC.swift; sourceTree = "<group>"; };
 		93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullaniciHucresi.swift; sourceTree = "<group>"; };
+		93A3C16B20FE802F0048B52C /* GurupHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GurupHucresi.swift; sourceTree = "<group>"; };
 		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				9369FE0520F96F0B0027AD26 /* GolgeGorunusu.swift */,
 				93A3C15C20FC94650048B52C /* FeedHucresi.swift */,
 				93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */,
+				93A3C16B20FE802F0048B52C /* GurupHucresi.swift */,
 			);
 			path = Gorunumler;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				93A3C15D20FC94650048B52C /* FeedHucresi.swift in Sources */,
 				93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */,
 				93A3C16420FD5CA90048B52C /* KullaniciHucresi.swift in Sources */,
+				93A3C16C20FE802F0048B52C /* GurupHucresi.swift in Sources */,
 				9369FE0220F951C20027AD26 /* GirisYapVC.swift in Sources */,
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
 				93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */,
