@@ -44,18 +44,19 @@ class GrupOlusturVC: UIViewController {
     
     @IBAction func btnGrupOlusturBasildi(_ sender: Any) {
         if txtBaslik.text != "" && txtAciklama.text != ""{
+            
+            secilmisKisilerDizi.append((Auth.auth().currentUser?.email)!);
+            
+            VeriServisi.ornek.grupOlustur(baslik: self.txtBaslik.text!, aciklama: self.txtAciklama.text!, kullaniciEpostalari: secilmisKisilerDizi, sonuc: { (durum) in
+                if durum{
+                    self.dismiss(animated: true, completion: nil);
+                }
+                else{
+                    debugPrint("Hata 56")
+                }
+            })
             VeriServisi.ornek.kullaniciIdGetir(epostalar: secilmisKisilerDizi) { (idDizisi) in
-                var kullaniciIdleri=idDizisi;
-                kullaniciIdleri.append((Auth.auth().currentUser?.uid)!);
                 
-                VeriServisi.ornek.grupOlustur(baslik: self.txtBaslik.text!, aciklama: self.txtAciklama.text!, kullaniciIdleri: kullaniciIdleri, sonuc: { (durum) in
-                    if durum{
-                        self.dismiss(animated: true, completion: nil);
-                    }
-                    else{
-                        debugPrint("Hata 56")
-                    }
-                })
             }
         }
     }

@@ -19,6 +19,7 @@
 		93A3C16220FD59220048B52C /* GrupOlusturVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16120FD59220048B52C /* GrupOlusturVC.swift */; };
 		93A3C16420FD5CA90048B52C /* KullaniciHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */; };
 		93A3C16C20FE802F0048B52C /* GurupHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16B20FE802F0048B52C /* GurupHucresi.swift */; };
+		93A3C16E20FE982A0048B52C /* Grup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16D20FE982A0048B52C /* Grup.swift */; };
 		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
@@ -46,6 +47,7 @@
 		93A3C16120FD59220048B52C /* GrupOlusturVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupOlusturVC.swift; sourceTree = "<group>"; };
 		93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KullaniciHucresi.swift; sourceTree = "<group>"; };
 		93A3C16B20FE802F0048B52C /* GurupHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GurupHucresi.swift; sourceTree = "<group>"; };
+		93A3C16D20FE982A0048B52C /* Grup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grup.swift; sourceTree = "<group>"; };
 		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				93A3C15F20FC96FE0048B52C /* Mesaj.swift */,
+				93A3C16D20FE982A0048B52C /* Grup.swift */,
 			);
 			path = Modeller;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			files = (
 				9369FDFD20F951410027AD26 /* AuthVC.swift in Sources */,
 				9369FE0020F951800027AD26 /* Sabitler.swift in Sources */,
+				93A3C16E20FE982A0048B52C /* Grup.swift in Sources */,
 				93C688AB20F9397F00354B1E /* GrupVC.swift in Sources */,
 				93A3C16220FD59220048B52C /* GrupOlusturVC.swift in Sources */,
 				93C9547220FC84E9007F0D44 /* PostOlusturVC.swift in Sources */,

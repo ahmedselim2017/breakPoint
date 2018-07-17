@@ -11,6 +11,9 @@ import UIKit
 class GrupVC: UIViewController {
 
     @IBOutlet weak var tabloGoruntuleyici: UITableView!
+    
+    var grupDizi=[Grup]();
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,7 +21,18 @@ class GrupVC: UIViewController {
         tabloGoruntuleyici.dataSource=self;
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        VeriServisi.ornek.REF_GRUPLAR.observeSingleEvent(of: .value) { (snapshot) in
+            VeriServisi.ornek.tumGruplariGetir { (grupdizi) in
+                self.grupDizi=grupdizi.reversed();
+                debugPrint("NEDEN OLMADI \(grupdizi.count)")
+                self.tabloGoruntuleyici.reloadData();
+            }
+        }
+    }
+   
+    
 }
 
 
@@ -28,13 +42,14 @@ extension GrupVC:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return grupDizi.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let hucre = tableView.dequeueReusableCell(withIdentifier: TB_ID_GRUP_HUCRESI) as? GurupHucresi else{return UITableViewCell();}
         
-        hucre.hucreleriAyarla(baslik: "Deneme", aciklama: "Deneme", kullaniciSayisi: 2);
+        let grup=grupDizi[indexPath.row];
+        hucre.hucreleriAyarla(baslik: grup.grupBaslik, aciklama: grup.grupAciklama, kullaniciSayisi: grup.katilimciSayisi);
         return hucre;
     }
 }
