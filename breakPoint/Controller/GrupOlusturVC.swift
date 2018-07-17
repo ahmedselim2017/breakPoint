@@ -12,7 +12,7 @@ class GrupOlusturVC: UIViewController {
 
     //Değişkenler
     var epostaDizi=[String]();
-    
+    var secilmisKisilerDizi=[String]();
     
     // UI Elementleri
     @IBOutlet weak var txtBaslik: TxtGiris!
@@ -23,6 +23,8 @@ class GrupOlusturVC: UIViewController {
     
     @IBOutlet weak var tabloGoruntuleyici: UITableView!
     
+    @IBOutlet weak var btnGrupOlustur: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +34,11 @@ class GrupOlusturVC: UIViewController {
         
         txtKatilimcilar.delegate=self;
         txtKatilimcilar.addTarget(self, action: #selector(txtKatilimciIcerikDegisti(_ :)), for: .editingChanged);
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        btnGrupOlustur.isHidden=true;
     }
     
     @IBAction func btnGrupOlusturBasildi(_ sender: Any) {
@@ -80,9 +87,33 @@ extension GrupOlusturVC:UITableViewDelegate,UITableViewDataSource{
         debugPrint("CCC");
         guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_KULLANICI_HUCRESI) as? KullaniciHucresi else {debugPrint("DFKSJKFS");return UITableViewCell();}
         
+        var secilmislik=false;
         let rsmProfil=UIImage(named:"defaultProfileImage");
-        hucre.hucreleriAyarla(rsmProfil: rsmProfil!, eposta: epostaDizi[indexPath.row], secilmisMi: true);
+        
+        if secilmisKisilerDizi.contains(epostaDizi[indexPath.row]){
+            secilmislik=true;
+        }
+        hucre.hucreleriAyarla(rsmProfil: rsmProfil!, eposta: epostaDizi[indexPath.row], secilmisMi: secilmislik);
         return hucre;
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let hucre=tableView.cellForRow(at: indexPath)as? KullaniciHucresi else{return;}
+        if !(secilmisKisilerDizi.contains(hucre.lblEposta.text!)){
+            secilmisKisilerDizi.append(hucre.lblEposta.text!);
+            lblKatilimcilar.text=secilmisKisilerDizi.joined(separator: ", ");
+            btnGrupOlustur.isHidden=false;
+        }
+        else{
+            secilmisKisilerDizi=secilmisKisilerDizi.filter({$0 != hucre.lblEposta.text});
+            if secilmisKisilerDizi.count>=1{
+                lblKatilimcilar.text=secilmisKisilerDizi.joined(separator: ", ");
+            }
+            else{
+                lblKatilimcilar.text="_katilimcilar";
+                btnGrupOlustur.isHidden=true;
+            }
+        }
+        tableView.reloadRows(at: [indexPath], with: .fade);
     }
 }
 

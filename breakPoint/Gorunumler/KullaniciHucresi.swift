@@ -18,19 +18,21 @@ class KullaniciHucresi: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
+        rsmSec.isHidden = !(rsmSec.isHidden);
+        
         // Configure the view for the selected state
     }
     
     func hucreleriAyarla(rsmProfil:UIImage,eposta:String,secilmisMi:Bool){
         self.rsmProfil.image=rsmProfil;
         self.lblEposta.text=eposta;
-        
+        debugPrint("jklkjdjksdjkldfjklsjkfdsjkldfsljkdfljksj AASS \(secilmisMi)")
         if secilmisMi{
-            self.rsmSec.isHidden=false;
+            self.rsmSec.isHidden=true;
         }
         else{
-            self.rsmSec.isHidden=true;
+            self.rsmSec.isHidden=false;
         }
     }
 
