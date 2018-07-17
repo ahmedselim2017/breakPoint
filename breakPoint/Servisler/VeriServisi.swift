@@ -97,5 +97,24 @@ class VeriServisi{
         }
     }
     
+    func kullaniciIdGetir(epostalar:[String], sonuc:@escaping(_ idDizi:[String])->()){
+        REF_KULLANICILAR.observeSingleEvent(of: .value) { (veriSnapshot) in
+            var idDizi=[String]();
+            guard let kullaniciSnapshot=veriSnapshot.children.allObjects as? [DataSnapshot] else{return;}
+            for kullanici in kullaniciSnapshot{
+                let eposta=kullanici.childSnapshot(forPath: "eposta").value as? String;
+                if epostalar.contains(eposta!){
+                    idDizi.append(kullanici.key);
+                }
+            }
+            sonuc(idDizi);
+        }
+    }
+    
+    func grupOlustur(baslik:String,aciklama:String,kullaniciIdleri:[String],sonuc:@escaping (_ durum:Bool)->()){
+        REF_GRUPLAR.childByAutoId().updateChildValues(["baslik":baslik,"aciklama":aciklama,"uyeler":kullaniciIdleri]);
+        sonuc(true);
+    }
+    
 }
 
