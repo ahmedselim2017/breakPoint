@@ -18,3 +18,4 @@ let SB_ID_ProfilVC="ProfilVC";
 let TB_ID_FEED_HUCRESI="feedHucresi";
 let TB_ID_KULLANICI_HUCRESI="kullaniciHucresi";
 let TB_ID_GRUP_HUCRESI="GrupHucresi";
+let TB_ID_GRUP_FEED_HUCRESI="grupFeedHucresi";
