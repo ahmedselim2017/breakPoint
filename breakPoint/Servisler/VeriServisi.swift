@@ -41,9 +41,10 @@ class VeriServisi{
         
     }
     
-    func feedPaylas(mesaj:String,kullaniciEposta:String,groupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
-        if groupAnahtari != nil{
-            
+    func feedPaylas(mesaj:String,kullaniciEposta:String,grupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
+        if grupAnahtari != nil{
+            REF_GRUPLAR.child(grupAnahtari!).child("mesajlar").childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta]);
+            sonuc(true);
         }
         else{
             REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta]);
@@ -66,6 +67,22 @@ class VeriServisi{
             sonuc(mesajlarDizisi);
         }
     }
+    
+    func grupFeedleriniGetir(grup:Grup, sonuc:@escaping(_ mesajlar:[Mesaj])->()){
+        var mesajDizi=[Mesaj]();
+        REF_GRUPLAR.child(grup.anahtar).child("mesajlar").observeSingleEvent(of: .value) { (mesajSnapshot) in
+            guard let mesajSnapshot = mesajSnapshot.children.allObjects as? [DataSnapshot] else{return;}
+    
+            for mesaj in mesajSnapshot{
+                let icerik=mesaj.childSnapshot(forPath: "icerik").value as? String;
+                let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as? String;
+                let mesaj=Mesaj(icerik: icerik!, kullaniciEposta: kullaniciEposta!);
+                mesajDizi.append(mesaj);
+            }
+            sonuc(mesajDizi);
+        }
+    }
+    
     
 
     func kullaniciCikisYap(sonuc:@escaping(_ durum:Bool,_ hata:Error?)->()){

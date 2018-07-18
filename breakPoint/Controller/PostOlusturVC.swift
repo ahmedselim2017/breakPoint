@@ -31,7 +31,7 @@ class PostOlusturVC: UIViewController {
     @IBAction func btnGonderBasildi(_ sender: Any) {
         if txaMesaj.text != nil && txaMesaj.text != "Birşeyler Paylaşın..."{
             btnGonder.isEnabled=false;
-            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, groupAnahtari: nil) { (durum) in
+            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: nil) { (durum) in
                 if durum{
                     self.btnGonder.isEnabled=true;
                     self.dismiss(animated: true, completion: nil);
