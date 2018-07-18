@@ -26,6 +26,7 @@
 		93A3C17720FFA6720048B52C /* ResimFormati.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17620FFA6720048B52C /* ResimFormati.swift */; };
 		93A3C17920FFA74A0048B52C /* UIImageEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17820FFA74A0048B52C /* UIImageEkl.swift */; };
 		93A3C17B20FFCDBE0048B52C /* YuvarlakResim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */; };
+		93A3C17D20FFDA5B0048B52C /* ProfilFeedHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17C20FFDA5B0048B52C /* ProfilFeedHucresi.swift */; };
 		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
@@ -60,6 +61,7 @@
 		93A3C17620FFA6720048B52C /* ResimFormati.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResimFormati.swift; sourceTree = "<group>"; };
 		93A3C17820FFA74A0048B52C /* UIImageEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageEkl.swift; sourceTree = "<group>"; };
 		93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YuvarlakResim.swift; sourceTree = "<group>"; };
+		93A3C17C20FFDA5B0048B52C /* ProfilFeedHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilFeedHucresi.swift; sourceTree = "<group>"; };
 		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				93A3C16B20FE802F0048B52C /* GurupHucresi.swift */,
 				93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */,
 				93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */,
+				93A3C17C20FFDA5B0048B52C /* ProfilFeedHucresi.swift */,
 			);
 			path = Gorunumler;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */,
 				93A3C17720FFA6720048B52C /* ResimFormati.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
+				93A3C17D20FFDA5B0048B52C /* ProfilFeedHucresi.swift in Sources */,
 				93A3C16020FC96FE0048B52C /* Mesaj.swift in Sources */,
 				9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */,
 			);

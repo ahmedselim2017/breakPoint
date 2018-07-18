@@ -93,6 +93,23 @@ class VeriServisi{
         }
     }
     
+    func kullaniciFeedGerit(eposta:String,sonuc:@escaping(_ mesaj:[Mesaj])->()){
+        var mesajlarDizisi=[Mesaj]();
+        REF_FEEDLER.observeSingleEvent(of: .value) { (feedSnapshot) in
+            guard let feedSnapshot = feedSnapshot.children.allObjects as?[DataSnapshot] else{return;}
+            
+            for mesaj in feedSnapshot{
+                let icerik=mesaj.childSnapshot(forPath: "icerik").value as! String;
+                let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as! String;
+                let kullaniciId=mesaj.childSnapshot(forPath: "kullaniciId").value as! String;
+                
+                let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta, kullaniciId: kullaniciId);
+                mesajlarDizisi.append(sonMesaj);
+            }
+            sonuc(mesajlarDizisi);
+        }
+    }
+    
     func grupFeedleriniGetir(grup:Grup, sonuc:@escaping(_ mesajlar:[Mesaj])->()){
         var mesajDizi=[Mesaj]();
         REF_GRUPLAR.child(grup.anahtar).child("mesajlar").observeSingleEvent(of: .value) { (mesajSnapshot) in

@@ -11,20 +11,31 @@ import Firebase;
 
 class ProfilVC: UIViewController {
 
+    var mesajlar=[Mesaj]();
+    
     @IBOutlet weak var txtEposta: UILabel!
     @IBOutlet weak var imgProfil: UIImageView!
     @IBOutlet weak var btnProfilDegistir: UIButton!
-    
+    @IBOutlet weak var tabloGoruntuleyici: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tabloGoruntuleyici.delegate=self;
+        tabloGoruntuleyici.dataSource=self;
         // Do any additional setup after loading the view.
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.txtEposta.text=Auth.auth().currentUser?.email;
         profilResimAyarla();
+        VeriServisi.ornek.kullaniciFeedGerit(eposta: (Auth.auth().currentUser?.email)!) { (mesajlar) in
+            self.mesajlar=mesajlar.reversed();
+            debugPrint("\(self.mesajlar.count)");
+            self.tabloGoruntuleyici.reloadData();
+
+        }
     }
     
     func profilResimAyarla(){
@@ -89,5 +100,23 @@ extension ProfilVC:UINavigationControllerDelegate,UIImagePickerControllerDelegat
         };
         
         self.dismissDetail();
+    }
+}
+
+
+extension ProfilVC:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mesajlar.count;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_PROFIL_FEED_HUCRESI) as? ProfilFeedHucresi else{return UITableViewCell();}
+        hucre.hucreleriAyarla(icerik: self.mesajlar[indexPath.row].icerik);
+        return hucre;
+        
     }
 }
