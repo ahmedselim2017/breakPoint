@@ -64,7 +64,7 @@ class GrupFeedVC: UIViewController {
     
 
     @IBAction func btnGeriBasildi(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
+        dismissDetail();
     }
     
     @IBAction func btnGonderBasildi(_ sender: Any) {

@@ -22,6 +22,7 @@
 		93A3C16E20FE982A0048B52C /* Grup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16D20FE982A0048B52C /* Grup.swift */; };
 		93A3C17020FEA9840048B52C /* GrupFeedHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */; };
 		93A3C17220FEAA770048B52C /* GrupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17120FEAA770048B52C /* GrupFeedVC.swift */; };
+		93A3C17420FF8B160048B52C /* UIViewControllerEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */; };
 		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
@@ -52,6 +53,7 @@
 		93A3C16D20FE982A0048B52C /* Grup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grup.swift; sourceTree = "<group>"; };
 		93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupFeedHucresi.swift; sourceTree = "<group>"; };
 		93A3C17120FEAA770048B52C /* GrupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupFeedVC.swift; sourceTree = "<group>"; };
+		93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEkl.swift; sourceTree = "<group>"; };
 		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				93A6C94E20FC8D5200904345 /* UIViewEkl.swift */,
+				93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */,
 			);
 			path = Eklentiler;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				93A3C17020FEA9840048B52C /* GrupFeedHucresi.swift in Sources */,
 				93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */,
 				93C688A920F9397F00354B1E /* FeedVC.swift in Sources */,
+				93A3C17420FF8B160048B52C /* UIViewControllerEkl.swift in Sources */,
 				9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
 				93A3C16020FC96FE0048B52C /* Mesaj.swift in Sources */,

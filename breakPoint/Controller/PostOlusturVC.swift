@@ -34,7 +34,7 @@ class PostOlusturVC: UIViewController {
             VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: nil) { (durum) in
                 if durum{
                     self.btnGonder.isEnabled=true;
-                    self.dismiss(animated: true, completion: nil);
+                    self.dismissDetail();
                 }
                 else{
                     self.btnGonder.isEnabled=true;

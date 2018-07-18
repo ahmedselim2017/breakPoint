@@ -56,6 +56,6 @@ extension GrupVC:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let grupFeedVC=storyboard?.instantiateViewController(withIdentifier: SB_ID_GrupFeedVC) as? GrupFeedVC else{return};
         grupFeedVC.initVeri(grup: grupDizi[indexPath.row]);
-        present(grupFeedVC, animated: true, completion: nil);
+        self.presentDetail(grupFeedVC);
     }
 }

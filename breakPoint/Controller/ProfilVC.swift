@@ -32,6 +32,7 @@ class ProfilVC: UIViewController {
                 if durum{
                     let authVC=self.storyboard?.instantiateViewController(withIdentifier: SB_ID_AuthVC) as? AuthVC;
                     self.present(authVC!, animated: true, completion: nil);
+                    
                 }
             })
         }
@@ -41,6 +42,7 @@ class ProfilVC: UIViewController {
         cikisYap.addAction(geriDonAksiyon);
         cikisYap.addAction(cikisYapAksiyon);
         present(cikisYap , animated: true, completion: nil);
+        
     }
     
     /*

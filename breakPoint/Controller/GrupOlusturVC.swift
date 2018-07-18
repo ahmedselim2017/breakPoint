@@ -49,7 +49,7 @@ class GrupOlusturVC: UIViewController {
             
             VeriServisi.ornek.grupOlustur(baslik: self.txtBaslik.text!, aciklama: self.txtAciklama.text!, kullaniciEpostalari: secilmisKisilerDizi, sonuc: { (durum) in
                 if durum{
-                    self.dismiss(animated: true, completion: nil);
+                    self.dismiss(animated: true);
                 }
                 else{
                     debugPrint("Hata 56")
@@ -62,7 +62,7 @@ class GrupOlusturVC: UIViewController {
     }
     
     @IBAction func btnGeriBasildi(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
+        dismissDetail();
     }
     
     @objc func txtKatilimciIcerikDegisti(_ txt:TxtGiris){

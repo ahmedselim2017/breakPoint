@@ -25,7 +25,7 @@ class GirisYapVC: UIViewController {
             AuthServisi.ornek.kullaniciGirisYap(eposta: txtEposta.text!, sifre: txtSifre.text!) { (sonuc, hata) in
                 if sonuc{
                     debugPrint("Giriş Başarılı");
-                    self.dismiss(animated: true, completion: nil);
+                    self.dismissDetail();
                 }
                 else{
                     debugPrint(self.txtSifre.text!);
@@ -33,7 +33,7 @@ class GirisYapVC: UIViewController {
                 AuthServisi.ornek.kullaniciKaydet(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciKaydetmeBitis: { (durum, hata) in
                     if durum{
                         AuthServisi.ornek.kullaniciGirisYap(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciGirisBitis: { (durum, nil) in
-                            self.dismiss(animated: true, completion: nil);
+                            self.dismissDetail();
                             debugPrint("YENİ KULLANICI");
                             
                         })
@@ -47,7 +47,7 @@ class GirisYapVC: UIViewController {
     }
     
     @IBAction func kapatmaBasildi(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
+        self.dismissDetail();
     }
     /*
     // MARK: - Navigation

@@ -20,13 +20,13 @@ class AuthVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated);
         if Auth.auth().currentUser != nil{
-            dismiss(animated: true, completion: nil);
+            dismissDetail();
         }
     }
     
     @IBAction func epostaIleGirisYapBasildi(_ sender: Any) {
         let girisYapVC=storyboard?.instantiateViewController(withIdentifier: SB_ID_GirisYapVC);
-        present(girisYapVC!, animated: true, completion: nil);
+        presentDetail(girisYapVC!);
     }
     
     @IBAction func facebookIleGirisYapBasildi(_ sender: Any) {
