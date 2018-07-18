@@ -15,11 +15,47 @@ class GrupFeedVC: UIViewController {
     @IBOutlet weak var txtMesaj: UITextField!
     @IBOutlet weak var vwGonder: UIView!
     @IBOutlet weak var lblGrupBaslik: UILabel!
+    @IBOutlet weak var btnGonder: UIButton!
+    @IBOutlet weak var bosluk: NSLayoutConstraint!
+    @IBOutlet weak var altbosluk: NSLayoutConstraint!
+    
+    var grup:Grup?;
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        vwGonder.klavyeyeBaglan();
+        btnGonder.klavyeyeBaglan();
+        txtMesaj.klavyeyeBaglan();
+        
+    }
+    
+    
+    
+    func initVeri(grup:Grup){
+        self.grup=grup;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        
+        lblGrupBaslik.text=grup?.grupBaslik;
+        lblKullanicilar.text=grup?.katilimcilar.joined(separator: ",");
+        
+        
+    }
+    
+    @objc func txtDegisti(_ txt:UITextField){
+
+        vwGonder.isHidden=false;
+        
+     
+
+        
+        loadViewIfNeeded();
+        
+        
     }
     
     @IBAction func btnGeriBasildi(_ sender: Any) {
@@ -40,3 +76,4 @@ class GrupFeedVC: UIViewController {
     */
 
 }
+

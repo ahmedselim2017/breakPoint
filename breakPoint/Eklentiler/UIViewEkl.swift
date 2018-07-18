@@ -8,7 +8,10 @@
 
 import UIKit
 
+var klavyeUzunlugu:CGFloat=0;
+
 extension UIView{
+    
     func klavyeyeBaglan(){
         
         NotificationCenter.default.addObserver(self, selector: #selector(klavyeDegisince(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil);
@@ -22,7 +25,7 @@ extension UIView{
         let bitisCercevesi=(bildirim.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue;
         
         let deltaY=bitisCercevesi.origin.y-baslangicCercevesi.origin.y;
-        
+        klavyeUzunlugu=deltaY;
         UIView.animateKeyframes(withDuration: sure, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: sapma), animations: {
             self.frame.origin.y += deltaY;
         }, completion: nil);

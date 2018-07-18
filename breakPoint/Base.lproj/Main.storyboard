@@ -360,7 +360,7 @@
         <!--Grup FeedVC-->
         <scene sceneID="42y-ER-i65">
             <objects>
-                <viewController id="96z-tv-YwV" customClass="GrupFeedVC" customModule="breakPoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GrupFeedVC" id="96z-tv-YwV" customClass="GrupFeedVC" customModule="breakPoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iXS-Vu-AlA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,7 +467,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voo-6Z-OPC">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Bir Mesaj Gönderin..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpO-Fc-iQ9">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Bir Mesaj Gönderin..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SpO-Fc-iQ9" customClass="TxtGiris" customModule="breakPoint" customModuleProvider="target">
                                         <rect key="frame" x="15" y="15" width="307" height="30"/>
                                         <color key="backgroundColor" red="0.16078431369999999" green="0.16862745100000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="0.0" green="0.7843137255" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -519,6 +519,9 @@
                         <viewLayoutGuide key="safeArea" id="Vjy-3o-s3I"/>
                     </view>
                     <connections>
+                        <outlet property="altbosluk" destination="YPm-0Q-KQa" id="mm7-xl-mV9"/>
+                        <outlet property="bosluk" destination="khj-CQ-4hV" id="0CC-xk-OIk"/>
+                        <outlet property="btnGonder" destination="rBq-L8-w9i" id="kF3-xa-XHt"/>
                         <outlet property="lblGrupBaslik" destination="XNQ-Xo-Fxh" id="7l6-Id-jHu"/>
                         <outlet property="lblKullanicilar" destination="QFP-ao-6xb" id="MIQ-Yw-p4a"/>
                         <outlet property="tabloGoruntuleyici" destination="dz8-Rp-q26" id="l6Z-Y5-xet"/>
