@@ -23,6 +23,9 @@
 		93A3C17020FEA9840048B52C /* GrupFeedHucresi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */; };
 		93A3C17220FEAA770048B52C /* GrupFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17120FEAA770048B52C /* GrupFeedVC.swift */; };
 		93A3C17420FF8B160048B52C /* UIViewControllerEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */; };
+		93A3C17720FFA6720048B52C /* ResimFormati.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17620FFA6720048B52C /* ResimFormati.swift */; };
+		93A3C17920FFA74A0048B52C /* UIImageEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17820FFA74A0048B52C /* UIImageEkl.swift */; };
+		93A3C17B20FFCDBE0048B52C /* YuvarlakResim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */; };
 		93A6C94F20FC8D5200904345 /* UIViewEkl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A6C94E20FC8D5200904345 /* UIViewEkl.swift */; };
 		93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A620F9397F00354B1E /* AppDelegate.swift */; };
 		93C688A920F9397F00354B1E /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C688A820F9397F00354B1E /* FeedVC.swift */; };
@@ -54,6 +57,9 @@
 		93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupFeedHucresi.swift; sourceTree = "<group>"; };
 		93A3C17120FEAA770048B52C /* GrupFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrupFeedVC.swift; sourceTree = "<group>"; };
 		93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerEkl.swift; sourceTree = "<group>"; };
+		93A3C17620FFA6720048B52C /* ResimFormati.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResimFormati.swift; sourceTree = "<group>"; };
+		93A3C17820FFA74A0048B52C /* UIImageEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageEkl.swift; sourceTree = "<group>"; };
+		93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YuvarlakResim.swift; sourceTree = "<group>"; };
 		93A6C94E20FC8D5200904345 /* UIViewEkl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEkl.swift; sourceTree = "<group>"; };
 		93C688A320F9397F00354B1E /* breakPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = breakPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93C688A620F9397F00354B1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,11 +122,20 @@
 			path = Modeller;
 			sourceTree = "<group>";
 		};
+		93A3C17520FFA65B0048B52C /* Enumlar */ = {
+			isa = PBXGroup;
+			children = (
+				93A3C17620FFA6720048B52C /* ResimFormati.swift */,
+			);
+			path = Enumlar;
+			sourceTree = "<group>";
+		};
 		93A6C94D20FC8D2A00904345 /* Eklentiler */ = {
 			isa = PBXGroup;
 			children = (
 				93A6C94E20FC8D5200904345 /* UIViewEkl.swift */,
 				93A3C17320FF8B160048B52C /* UIViewControllerEkl.swift */,
+				93A3C17820FFA74A0048B52C /* UIImageEkl.swift */,
 			);
 			path = Eklentiler;
 			sourceTree = "<group>";
@@ -146,6 +161,7 @@
 		93C688A520F9397F00354B1E /* breakPoint */ = {
 			isa = PBXGroup;
 			children = (
+				93A3C17520FFA65B0048B52C /* Enumlar */,
 				93A3C15E20FC96EF0048B52C /* Modeller */,
 				93A6C94D20FC8D2A00904345 /* Eklentiler */,
 				9369FDFE20F951750027AD26 /* Araclar */,
@@ -186,6 +202,7 @@
 				93A3C16320FD5CA90048B52C /* KullaniciHucresi.swift */,
 				93A3C16B20FE802F0048B52C /* GurupHucresi.swift */,
 				93A3C16F20FEA9840048B52C /* GrupFeedHucresi.swift */,
+				93A3C17A20FFCDBE0048B52C /* YuvarlakResim.swift */,
 			);
 			path = Gorunumler;
 			sourceTree = "<group>";
@@ -334,9 +351,12 @@
 				93C688A720F9397F00354B1E /* AppDelegate.swift in Sources */,
 				93A3C17020FEA9840048B52C /* GrupFeedHucresi.swift in Sources */,
 				93C9547020FC8087007F0D44 /* ProfilVC.swift in Sources */,
+				93A3C17920FFA74A0048B52C /* UIImageEkl.swift in Sources */,
+				93A3C17B20FFCDBE0048B52C /* YuvarlakResim.swift in Sources */,
 				93C688A920F9397F00354B1E /* FeedVC.swift in Sources */,
 				93A3C17420FF8B160048B52C /* UIViewControllerEkl.swift in Sources */,
 				9369FE0820F970B60027AD26 /* AuthServisi.swift in Sources */,
+				93A3C17720FFA6720048B52C /* ResimFormati.swift in Sources */,
 				93C688C220F9443D00354B1E /* VeriServisi.swift in Sources */,
 				93A3C16020FC96FE0048B52C /* Mesaj.swift in Sources */,
 				9369FE0420F964150027AD26 /* TxtGiris.swift in Sources */,

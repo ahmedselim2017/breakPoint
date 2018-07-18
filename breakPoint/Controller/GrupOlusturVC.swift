@@ -14,6 +14,7 @@ class GrupOlusturVC: UIViewController {
     //Değişkenler
     var epostaDizi=[String]();
     var secilmisKisilerDizi=[String]();
+    var idDizi=[String]();
     
     // UI Elementleri
     @IBOutlet weak var txtBaslik: TxtGiris!
@@ -72,8 +73,9 @@ class GrupOlusturVC: UIViewController {
             tabloGoruntuleyici.reloadData();
         }
         else{
-            VeriServisi.ornek.emailGetir(sorgu: txtKatilimcilar.text!) { (epostaDizi) in
+            VeriServisi.ornek.emailGetir(sorgu: txtKatilimcilar.text!) { (epostaDizi,idDizi) in
                 self.epostaDizi=epostaDizi;
+                self.idDizi=idDizi;
                 debugPrint("skdlşklsdklsaşd\(epostaDizi.count)")
                 self.tabloGoruntuleyici.reloadData();
             }
@@ -102,7 +104,7 @@ extension GrupOlusturVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         debugPrint("CCC");
-        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_KULLANICI_HUCRESI) as? KullaniciHucresi else {debugPrint("DFKSJKFS");return UITableViewCell();}
+        guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_KULLANICI_HUCRESI) as? KullaniciHucresi else {return UITableViewCell();}
         
         var secilmislik=false;
         let rsmProfil=UIImage(named:"defaultProfileImage");
@@ -110,7 +112,12 @@ extension GrupOlusturVC:UITableViewDelegate,UITableViewDataSource{
         if secilmisKisilerDizi.contains(epostaDizi[indexPath.row]){
             secilmislik=true;
         }
-        hucre.hucreleriAyarla(rsmProfil: rsmProfil!, eposta: epostaDizi[indexPath.row], secilmisMi: secilmislik);
+        
+        VeriServisi.ornek.profilResmiGetir(kullaniciId: idDizi[indexPath.row]) { (resim) in
+            hucre.hucreleriAyarla(rsmProfil: resim, eposta: self.epostaDizi[indexPath.row], secilmisMi: secilmislik);
+
+        }
+        
         return hucre;
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

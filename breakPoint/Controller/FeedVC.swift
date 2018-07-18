@@ -42,11 +42,13 @@ extension FeedVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let hucre=tableView.dequeueReusableCell(withIdentifier: TB_ID_FEED_HUCRESI) as? FeedHucresi else{return UITableViewCell();}
         
-        let resim=UIImage(named: "defaultProfileImage");
+        
         let mesaj=mesajlarDizisi[indexPath.row];
+        
         let icerik=mesaj.icerik;
-        hucre.hucreleriAyarla(imgProfil: resim!, eposta: "\(mesaj.kullaniciEposta)", icerik: icerik);
-
+        VeriServisi.ornek.profilResmiGetir(kullaniciId: mesaj.kullaniciId) { (resim) in
+            hucre.hucreleriAyarla(imgProfil: resim, eposta: "\(mesaj.kullaniciEposta)", icerik: icerik);
+        }
         
         let eposta=mesaj.kullaniciEposta;
         return hucre;

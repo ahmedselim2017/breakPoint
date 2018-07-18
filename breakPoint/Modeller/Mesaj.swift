@@ -11,6 +11,7 @@ import Foundation
 class  Mesaj {
     private var _icerik:String;
     private var _kullaniciEposta:String;
+    private var _kullaniciId:String;
     
     var icerik:String{
         return _icerik;
@@ -20,9 +21,14 @@ class  Mesaj {
         return _kullaniciEposta;
     }
     
-    init(icerik:String,kullaniciEposta:String) {
+    var kullaniciId:String{
+        return _kullaniciId;
+    }
+    
+    init(icerik:String,kullaniciEposta:String,kullaniciId:String) {
         self._icerik=icerik;
         self._kullaniciEposta=kullaniciEposta;
+        self._kullaniciId=kullaniciId;
     }
     
 }

@@ -13,6 +13,7 @@ class ProfilVC: UIViewController {
 
     @IBOutlet weak var txtEposta: UILabel!
     @IBOutlet weak var imgProfil: UIImageView!
+    @IBOutlet weak var btnProfilDegistir: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,14 @@ class ProfilVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.txtEposta.text=Auth.auth().currentUser?.email;
+        profilResimAyarla();
+    }
+    
+    func profilResimAyarla(){
+        VeriServisi.ornek.profilResmiGetir(kullaniciId: (Auth.auth().currentUser?.uid)!) { (resim) in
+            self.imgProfil.image=resim;
+        }
+
     }
     
     @IBAction func btnCikisYapBasildi(_ sender: Any) {
@@ -45,6 +54,17 @@ class ProfilVC: UIViewController {
         
     }
     
+    @IBAction func btnProiflDegistirBasildi(_ sender: Any) {
+        let resim=UIImagePickerController();
+        
+        resim.delegate=self;
+        resim.sourceType=UIImagePickerController.SourceType.photoLibrary;
+        resim.allowsEditing=true;
+        
+        present(resim , animated: true, completion: nil);
+
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -55,4 +75,19 @@ class ProfilVC: UIViewController {
     }
     */
 
+}
+
+extension ProfilVC:UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let resim=info[UIImagePickerController.InfoKey.originalImage] as? UIImage else{return;}
+
+        
+        VeriServisi.ornek.profilResmiEkle(kullaniciId: (Auth.auth().currentUser?.uid)!, resim: resim) { (durum) in
+            if durum{
+                debugPrint("İŞLEM BAŞARILI!!");
+            }
+        };
+        
+        self.dismissDetail();
+    }
 }

@@ -29,10 +29,10 @@ class KullaniciHucresi: UITableViewCell {
         self.lblEposta.text=eposta;
         debugPrint("jklkjdjksdjkldfjklsjkfdsjkldfsljkdfljksj AASS \(secilmisMi)")
         if secilmisMi{
-            self.rsmSec.isHidden=true;
+            self.rsmSec.isHidden=false;
         }
         else{
-            self.rsmSec.isHidden=false;
+            self.rsmSec.isHidden=true;
         }
     }
 

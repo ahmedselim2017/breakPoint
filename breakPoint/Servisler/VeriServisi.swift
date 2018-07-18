@@ -39,15 +39,38 @@ class VeriServisi{
     func VTKullaniciOlustur(id:String,kullaniciVeri:Dictionary<String,Any>){
         REF_KULLANICILAR.child(id).updateChildValues(kullaniciVeri);
         
+        
     }
     
-    func feedPaylas(mesaj:String,kullaniciEposta:String,grupAnahtari:String?,sonuc:@escaping(_ durum:Bool)->()){
+    func profilResmiGetir(kullaniciId:String, sonuc:@escaping(_ resim:UIImage)->()){
+        var profilResmi:UIImage!;
+        REF_KULLANICILAR.child(kullaniciId).child("resim").observeSingleEvent(of: .value) { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else{sonuc(UIImage(named:"defaultProfileImage")!);return;}
+            for resim in snapshot{
+                let base64String=resim.value as? String;
+                let base64Data=Data(base64Encoded:base64String!);
+                profilResmi=UIImage(data: base64Data!);
+                
+            }
+            sonuc(profilResmi);
+        }
+        
+        
+    }
+    
+    
+    func profilResmiEkle(kullaniciId:String,resim:UIImage , sonuc:@escaping(_ durum:Bool)->()){
+        REF_KULLANICILAR.child(kullaniciId).child("resim").updateChildValues(["base64":resim.jpegData(compressionQuality: 0.30)?.base64EncodedString()]);
+        sonuc(true);
+    }
+    
+    func feedPaylas(mesaj:String,kullaniciEposta:String,grupAnahtari:String?,kullaniciId:String,sonuc:@escaping(_ durum:Bool)->()){
         if grupAnahtari != nil{
-            REF_GRUPLAR.child(grupAnahtari!).child("mesajlar").childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta]);
+            REF_GRUPLAR.child(grupAnahtari!).child("mesajlar").childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta,"kullaniciId":kullaniciId]);
             sonuc(true);
         }
         else{
-            REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta]);
+            REF_FEEDLER.childByAutoId().updateChildValues(["icerik":mesaj,"kullaniciEposta":kullaniciEposta,"kullaniciId":kullaniciId]);
             sonuc(true);
         }
     }
@@ -61,7 +84,9 @@ class VeriServisi{
             for mesaj in feedSnapshot{
                 let icerik=mesaj.childSnapshot(forPath: "icerik").value as! String;
                 let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as! String;
-                let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta);
+                let kullaniciId=mesaj.childSnapshot(forPath: "kullaniciId").value as! String;
+                
+                let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta, kullaniciId: kullaniciId);
                 mesajlarDizisi.append(sonMesaj);
             }
             sonuc(mesajlarDizisi);
@@ -76,7 +101,8 @@ class VeriServisi{
             for mesaj in mesajSnapshot{
                 let icerik=mesaj.childSnapshot(forPath: "icerik").value as? String;
                 let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as? String;
-                let mesaj=Mesaj(icerik: icerik!, kullaniciEposta: kullaniciEposta!);
+                let kullaniciId=mesaj.childSnapshot(forPath: "kullaniciId").value as? String;
+                let mesaj=Mesaj(icerik: icerik!, kullaniciEposta: kullaniciEposta!, kullaniciId: kullaniciId!);
                 mesajDizi.append(mesaj);
             }
             sonuc(mesajDizi);
@@ -96,21 +122,24 @@ class VeriServisi{
         }
     }
     
-    func emailGetir(sorgu:String, sonuc:@escaping(_ epostaDizi:[String])->()){
+    func emailGetir(sorgu:String, sonuc:@escaping(_ epostaDizi:[String],_ idDizi:[String])->()){
         var epostalar=[String]();
+        var idler=[String]();
         REF_KULLANICILAR.observe(.value) { (snapshot) in
             guard let kullaniciSnapshot = snapshot.children.allObjects as? [DataSnapshot] else{return;}
             
             for kullanici in kullaniciSnapshot{
                 let eposta=kullanici.childSnapshot(forPath: "eposta").value as? String;
-                
+                let id=kullanici.key;
+                print(id);
                 if (eposta?.contains(sorgu))! == true && eposta != Auth.auth().currentUser?.email{
                     debugPrint("BBBB")
                     epostalar.append(eposta!);
+                    idler.append(id);
                     debugPrint("BURAYA\(epostalar.count)");
                 }
             }
-            sonuc(epostalar);
+            sonuc(epostalar,idler);
         }
     }
     

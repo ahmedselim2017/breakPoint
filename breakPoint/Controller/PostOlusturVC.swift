@@ -12,7 +12,7 @@ import FirebaseAuth;
 
 class PostOlusturVC: UIViewController {
 
-    @IBOutlet weak var imgProfil: NSLayoutConstraint!
+    @IBOutlet weak var imgProfil: UIImageView!
     @IBOutlet weak var lblEposta: UILabel!
     @IBOutlet weak var txaMesaj: UITextView!
     @IBOutlet weak var btnGonder: UIButton!
@@ -26,12 +26,16 @@ class PostOlusturVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
         self.lblEposta.text=Auth.auth().currentUser?.email;
+        
+        VeriServisi.ornek.profilResmiGetir(kullaniciId: (Auth.auth().currentUser?.uid)!) { (resim) in
+            self.imgProfil.image=resim;
+        }
     }
     
     @IBAction func btnGonderBasildi(_ sender: Any) {
         if txaMesaj.text != nil && txaMesaj.text != "Birşeyler Paylaşın..."{
             btnGonder.isEnabled=false;
-            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: nil) { (durum) in
+            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: nil, kullaniciId: (Auth.auth().currentUser?.uid)!) { (durum) in
                 if durum{
                     self.btnGonder.isEnabled=true;
                     self.dismissDetail();

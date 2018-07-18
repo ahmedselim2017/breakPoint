@@ -6,7 +6,8 @@
 //  Copyright © 2018 Ahmed Selim Üzüm. All rights reserved.
 //
 
-import UIKit
+import UIKit;
+import Firebase;
 
 class GirisYapVC: UIViewController {
 
@@ -33,6 +34,9 @@ class GirisYapVC: UIViewController {
                 AuthServisi.ornek.kullaniciKaydet(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciKaydetmeBitis: { (durum, hata) in
                     if durum{
                         AuthServisi.ornek.kullaniciGirisYap(eposta: self.txtEposta.text!, sifre: self.txtSifre.text!, kullaniciGirisBitis: { (durum, nil) in
+                            VeriServisi.ornek.profilResmiEkle(kullaniciId: (Auth.auth().currentUser?.uid)!, resim: UIImage(named:"defaultProfileImage")!, sonuc: { (durum) in
+                                
+                            })
                             self.dismissDetail();
                             debugPrint("YENİ KULLANICI");
                             

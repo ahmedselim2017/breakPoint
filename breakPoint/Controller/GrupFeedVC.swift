@@ -68,11 +68,11 @@ class GrupFeedVC: UIViewController {
     }
     
     @IBAction func btnGonderBasildi(_ sender: Any) {
-        debugPrint("NEDEN BAMIYO");
+        
         if txtMesaj.text != ""{
             txtMesaj.isEnabled=false;
             btnGonder.isEnabled=false;
-            VeriServisi.ornek.feedPaylas(mesaj: txtMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: self.grup?.anahtar) { (sonuc) in
+            VeriServisi.ornek.feedPaylas(mesaj: txtMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: self.grup?.anahtar, kullaniciId: (Auth.auth().currentUser?.uid)!) { (sonuc) in
                 if sonuc{
                     self.txtMesaj.isEnabled=true;
                     self.btnGonder.isEnabled=true;
@@ -109,7 +109,11 @@ extension GrupFeedVC:UITableViewDelegate,UITableViewDataSource{
         let eposta=mesajDizi[indexPath.row].kullaniciEposta;
         let icerik=mesajDizi[indexPath.row].icerik;
         
-        hucre.hucreleriAyarla(imgProfil: UIImage(named: "defaultProfileImage")!, eposta: eposta, icerik: icerik);
+        VeriServisi.ornek.profilResmiGetir(kullaniciId: mesajDizi[indexPath.row].kullaniciId) { (resim) in
+            hucre.hucreleriAyarla(imgProfil: resim, eposta: eposta, icerik: icerik);
+
+        }
+        
         return hucre;
         
     }
