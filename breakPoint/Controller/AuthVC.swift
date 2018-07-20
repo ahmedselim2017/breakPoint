@@ -8,6 +8,7 @@
 
 import UIKit;
 import Firebase;
+import FBSDKLoginKit;
 
 class AuthVC: UIViewController {
 
@@ -30,6 +31,10 @@ class AuthVC: UIViewController {
     }
     
     @IBAction func facebookIleGirisYapBasildi(_ sender: Any) {
+        let girisYapVC=storyboard?.instantiateViewController(withIdentifier: SB_ID_GirisYapVC);
+        AuthServisi.ornek.kullaniciGirisYap(viewController: self);
+        self.dismissDetail();
+        
     }
 
     @IBAction func googleIleGirisYapBasildi(_ sender: Any) {

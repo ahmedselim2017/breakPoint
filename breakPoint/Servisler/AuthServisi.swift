@@ -7,7 +7,9 @@
 //
 
 import Foundation;
+import FBSDKLoginKit;
 import Firebase;
+
 
 class AuthServisi{
     static let ornek=AuthServisi();
@@ -30,6 +32,7 @@ class AuthServisi{
     }
     
     func kullaniciGirisYap(eposta:String,sifre:String,kullaniciGirisBitis:@escaping(_ durum:Bool, _ hata:Error?)->()){
+        
         Auth.auth().signIn(withEmail: eposta, password: sifre) { (kullanici, hata) in
             if hata != nil{
                 kullaniciGirisBitis(false,hata);
@@ -39,4 +42,31 @@ class AuthServisi{
         }
     }
     
+    func kullaniciGirisYap(viewController:UIViewController){
+        let facebook=FBSDKLoginManager();
+        facebook.logIn(withReadPermissions: ["public_profile","email"], from: viewController) { (sonuc, hata) in
+            if hata != nil{
+                debugPrint("facebook Girişi Başarısız");
+                return;
+            }
+            guard let token=FBSDKAccessToken.current() else {return;}
+            let kimlik=FacebookAuthProvider.credential(withAccessToken: token.tokenString);
+            Auth.auth().signInAndRetrieveData(with: kimlik, completion: { (sonuc, hata) in
+                if hata != nil{
+                    debugPrint("facebook Girişi Başarısız2");
+                    return;
+                }
+                guard let kullanici=sonuc else{return;}
+                let kullaniciVeri=["saglayici":kullanici.user.providerID,"eposta":kullanici.user.email];
+                
+                VeriServisi.ornek.VTKullaniciOlustur(id: kullanici.user.uid, kullaniciVeri: kullaniciVeri);
+                VeriServisi.ornek.profilResmiEkle(kullaniciId: kullanici.user.uid, resim: UIImage(named:"defaultProfileImage")!, sonuc: { (durum) in
+                    
+                })
+               
+                
+            })
+        }
+    }
+   
 }

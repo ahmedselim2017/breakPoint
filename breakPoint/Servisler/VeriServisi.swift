@@ -44,6 +44,7 @@ class VeriServisi{
     
     func profilResmiGetir(kullaniciId:String, sonuc:@escaping(_ resim:UIImage)->()){
         var profilResmi:UIImage!;
+        let profilResmi2=UIImage(named:"defaultProfileImage")!;
         REF_KULLANICILAR.child(kullaniciId).child("resim").observeSingleEvent(of: .value) { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else{sonuc(UIImage(named:"defaultProfileImage")!);return;}
             for resim in snapshot{
@@ -102,9 +103,10 @@ class VeriServisi{
                 let icerik=mesaj.childSnapshot(forPath: "icerik").value as! String;
                 let kullaniciEposta=mesaj.childSnapshot(forPath: "kullaniciEposta").value as! String;
                 let kullaniciId=mesaj.childSnapshot(forPath: "kullaniciId").value as! String;
-                
-                let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta, kullaniciId: kullaniciId);
-                mesajlarDizisi.append(sonMesaj);
+                if eposta==kullaniciEposta{
+                    let sonMesaj=Mesaj(icerik: icerik, kullaniciEposta: kullaniciEposta, kullaniciId: kullaniciId);
+                    mesajlarDizisi.append(sonMesaj);
+                }
             }
             sonuc(mesajlarDizisi);
         }
