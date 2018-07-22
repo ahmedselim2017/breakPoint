@@ -190,14 +190,16 @@ class VeriServisi{
             
             for grup in grupSnapshot{
                 katilimciDizi=grup.childSnapshot(forPath: "uyeler").value as! [String];
-                if katilimciDizi.contains((Auth.auth().currentUser?.email)!){
-                    let grupBaslik=(grup.childSnapshot(forPath: "baslik").value as? String)!;
-                    let grupAciklama=(grup.childSnapshot(forPath: "aciklama").value as? String)!;
-                    let grupAnahtar=grup.key;
-                    
-                    let grup1=Grup(baslik: grupBaslik, aciklamma: grupAciklama, anahtar: grupAnahtar, katilimciSayisi: katilimciDizi.count, katilimcilar: katilimciDizi);
-                    grupDizi.append(grup1);
-                    debugPrint("BİLEMEM \(grupDizi.count)");
+                if Auth.auth().currentUser?.email != nil{
+                    if katilimciDizi.contains((Auth.auth().currentUser?.email)!){
+                        let grupBaslik=(grup.childSnapshot(forPath: "baslik").value as? String)!;
+                        let grupAciklama=(grup.childSnapshot(forPath: "aciklama").value as? String)!;
+                        let grupAnahtar=grup.key;
+                        
+                        let grup1=Grup(baslik: grupBaslik, aciklamma: grupAciklama, anahtar: grupAnahtar, katilimciSayisi: katilimciDizi.count, katilimcilar: katilimciDizi);
+                        grupDizi.append(grup1);
+                        debugPrint("BİLEMEM \(grupDizi.count)");
+                    }
                 }
             }
             sonuc(grupDizi);

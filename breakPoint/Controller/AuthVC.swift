@@ -9,6 +9,8 @@
 import UIKit;
 import Firebase;
 import FBSDKLoginKit;
+import GoogleSignIn;
+
 
 class AuthVC: UIViewController {
 
@@ -36,7 +38,13 @@ class AuthVC: UIViewController {
         self.dismissDetail();
         
     }
-
+    
+    @IBAction func btnAnonimOlarakGirisYapBasildi(_ sender: Any) {
+        let girisYapVC=storyboard?.instantiateViewController(withIdentifier: SB_ID_GirisYapVC);
+        AuthServisi.ornek.kullaniciGirisYap();
+        self.dismissDetail();
+    }
+    
     @IBAction func googleIleGirisYapBasildi(_ sender: Any) {
     }
     /*

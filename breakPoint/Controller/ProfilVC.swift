@@ -28,13 +28,17 @@ class ProfilVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        self.txtEposta.text=Auth.auth().currentUser?.email;
         profilResimAyarla();
-        VeriServisi.ornek.kullaniciFeedGerit(eposta: (Auth.auth().currentUser?.email)!) { (mesajlar) in
-            self.mesajlar=mesajlar.reversed();
-            debugPrint("\(self.mesajlar.count)");
-            self.tabloGoruntuleyici.reloadData();
-
+        if Auth.auth().currentUser?.email != nil{
+            self.txtEposta.text=Auth.auth().currentUser?.email;
+            VeriServisi.ornek.kullaniciFeedGerit(eposta: (Auth.auth().currentUser?.email)!) { (mesajlar) in
+                self.mesajlar=mesajlar.reversed();
+                debugPrint("\(self.mesajlar.count)");
+                self.tabloGoruntuleyici.reloadData();
+            }
+        }
+        else{
+            self.txtEposta.text="Anonim";
         }
     }
     

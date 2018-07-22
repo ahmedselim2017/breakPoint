@@ -25,8 +25,12 @@ class PostOlusturVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated);
-        self.lblEposta.text=Auth.auth().currentUser?.email;
-        
+        if Auth.auth().currentUser?.email != nil{
+            self.lblEposta.text=Auth.auth().currentUser?.email;
+        }
+        else{
+            self.lblEposta.text="Anonim"
+        }
         VeriServisi.ornek.profilResmiGetir(kullaniciId: (Auth.auth().currentUser?.uid)!) { (resim) in
             self.imgProfil.image=resim;
         }
@@ -35,7 +39,13 @@ class PostOlusturVC: UIViewController {
     @IBAction func btnGonderBasildi(_ sender: Any) {
         if txaMesaj.text != nil && txaMesaj.text != "Birşeyler Paylaşın..."{
             btnGonder.isEnabled=false;
-            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (Auth.auth().currentUser?.email)!, grupAnahtari: nil, kullaniciId: (Auth.auth().currentUser?.uid)!) { (durum) in
+            
+            var kullaniciEposta=Auth.auth().currentUser?.email;
+            if kullaniciEposta == nil{
+                kullaniciEposta="Anonim";
+            }
+            
+            VeriServisi.ornek.feedPaylas(mesaj: txaMesaj.text!, kullaniciEposta: (kullaniciEposta)!, grupAnahtari: nil, kullaniciId: (Auth.auth().currentUser?.uid)!) { (durum) in
                 if durum{
                     self.btnGonder.isEnabled=true;
                     self.dismissDetail();

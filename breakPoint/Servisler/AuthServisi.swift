@@ -14,6 +14,9 @@ import Firebase;
 class AuthServisi{
     static let ornek=AuthServisi();
     
+    
+  
+    
     func kullaniciKaydet(eposta:String,sifre:String,kullaniciKaydetmeBitis:@escaping(_ durum:Bool, _ hata:Error?)->()){
         Auth.auth().createUser(withEmail: eposta, password: sifre) { (kullanici, hata) in
             
@@ -23,7 +26,7 @@ class AuthServisi{
                 return;
             }
             
-            let kullaniciVeri=["saglayici":kullanici.user.providerID,"eposta":kullanici.user.email];
+            let kullaniciVeri=["saglayici":kullanici.user.providerID,"eposta":"anonim"];
             
             VeriServisi.ornek.VTKullaniciOlustur(id: kullanici.user.uid, kullaniciVeri: kullaniciVeri);
             kullaniciKaydetmeBitis(true,nil);
@@ -39,6 +42,22 @@ class AuthServisi{
                 return;
             }
             kullaniciGirisBitis(true,nil);
+        }
+    }
+    
+    func kullaniciGirisYap(){
+        Auth.auth().signInAnonymously { (sonuc, hata) in
+            if hata != nil{
+                debugPrint("HATA!!!");
+            }
+            guard let kullanici=sonuc else{return;}
+            let kullaniciVeri=["saglayici":kullanici.user.providerID,"eposta":kullanici.user.email];
+            
+            VeriServisi.ornek.VTKullaniciOlustur(id: kullanici.user.uid, kullaniciVeri: kullaniciVeri);
+            VeriServisi.ornek.profilResmiEkle(kullaniciId: kullanici.user.uid, resim: UIImage(named:"defaultProfileImage")!, sonuc: { (durum) in
+                
+            })
+            
         }
     }
     

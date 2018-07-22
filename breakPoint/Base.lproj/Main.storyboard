@@ -913,11 +913,12 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzU-kS-Zv7">
                                                 <rect key="frame" x="0.0" y="139" width="303" height="59.5"/>
-                                                <color key="backgroundColor" red="0.80784313725490198" green="0.32941176470588235" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="G+ İle Giriş Yap">
+                                                <color key="backgroundColor" red="0.16078431372549018" green="0.16862745098039217" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Anonim Olarak Giriş Yap">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
+                                                    <action selector="btnAnonimOlarakGirisYapBasildi:" destination="IP7-qB-2Wi" eventType="touchUpInside" id="KuX-Ab-jxi"/>
                                                     <action selector="googleIleGirisYapBasildi:" destination="IP7-qB-2Wi" eventType="touchUpInside" id="FV3-0y-rhx"/>
                                                 </connections>
                                             </button>

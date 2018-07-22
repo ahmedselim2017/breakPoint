@@ -12,4 +12,5 @@ target 'breakPoint' do
   pod 'Bolts'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 end
